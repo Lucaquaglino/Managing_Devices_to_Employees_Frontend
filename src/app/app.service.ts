@@ -25,4 +25,10 @@ getDispositivi(): Observable<any[]> {
   return this.http.get<any[]>(`${this.urlDispositivi}`);
 
 }
+
+
+getUsersId(userId:string): Observable<UserInfo[]> {
+  return this.http.get<UserInfo[]>(`${this.urlUtenti}/${userId}`);
+}
+
 }

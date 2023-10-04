@@ -18,9 +18,39 @@
               <td>{{utente.nome}}</td>
               <td>{{utente.cognome}}</td>
               <td>{{utente.email}}</td>
-              <div *ngFor="let utentes of utenti.dispositiviAssegnati">
-                <p>{{utentes.modelloDispositivo}}</p>
-                </div>
+<button (click)="loadUserId(utente.id)">click</button>
+
+
+
+<div *ngIf="utenteID">
+  <table class="table table-bordered table-active table-responsive" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Email3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let utenteID of utenteID.dispositiviAssegnati">
+            <td>{{utenteID.id}}</td>
+            <td>{{utenteID.tipoDispositivo}}</td>
+            <td>{{utenteID.nome}}</td>
+            <td>{{utenteID.disponibilitaDispositivo}}</td>
+            <td>{{utenteID.modelloDispositivo}}</td>
+
+
+        </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+
+
           </tr>
 
       </tbody>
@@ -29,9 +59,6 @@
 
 
 
-<div *ngFor="let utentes of utenti.dispositiviAssegnati">
-  <p>{{utentes.modelloDispositivo}}</p>
-  </div>
 
 
 <div class="container mt-4">
@@ -57,3 +84,5 @@
       </tbody>
   </table>
 </div>
+
+

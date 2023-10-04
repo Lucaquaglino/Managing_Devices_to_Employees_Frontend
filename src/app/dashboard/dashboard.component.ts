@@ -8,6 +8,7 @@ import { UserInfo } from '../interfaces/user-info';
 })
 export class DashboardComponent implements OnInit {
 utenti:any;
+utenteID:any;
 dispositivi:any;
   constructor(private appService:AppSerivceService) { }
 
@@ -29,7 +30,14 @@ loadDispositivi(): void {
       console.log(dispositivi);
       this.dispositivi = dispositivi;
     })
-
-
 }
+
+loadUserId(userId:string): void {
+  this.appService.getUsersId(userId).subscribe(
+    (users: any) => {
+      console.log(users);
+      this.utenteID = users;
+    })
+}
+
 }
