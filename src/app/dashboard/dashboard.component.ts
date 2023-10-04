@@ -7,12 +7,13 @@ import { UserInfo } from '../interfaces/user-info';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-utenti: UserInfo[]=[];
-
+utenti:any;
+dispositivi:any;
   constructor(private appService:AppSerivceService) { }
 
   ngOnInit(): void {
     this.loadUsers();
+    this.loadDispositivi();
   }
 
   loadUsers(): void {
@@ -22,4 +23,13 @@ utenti: UserInfo[]=[];
         this.utenti = users;
       })
   }
+loadDispositivi(): void {
+  this.appService.getDispositivi().subscribe(
+    (dispositivi: any) => {
+      console.log(dispositivi);
+      this.dispositivi = dispositivi;
+    })
+
+
+}
 }

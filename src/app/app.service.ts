@@ -12,6 +12,7 @@ import { UserInfo } from './interfaces/user-info';
 })
 export class AppSerivceService {
 urlUtenti:string="http://localhost:3001/utenti"
+urlDispositivi:string="http://localhost:3001/dispositivi"
 
 
   constructor(private http:HttpClient) { }
@@ -20,6 +21,8 @@ urlUtenti:string="http://localhost:3001/utenti"
   getUsers(): Observable<UserInfo[]> {
     return this.http.get<UserInfo[]>(`${this.urlUtenti}`);
   }
+getDispositivi(): Observable<any[]> {
+  return this.http.get<any[]>(`${this.urlDispositivi}`);
 
-
+}
 }

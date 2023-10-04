@@ -6,4 +6,5 @@ export interface UserInfo {
   email: string;
   // password: string;
   // role: string;
+  dispositiviAssegnati:[]
 }

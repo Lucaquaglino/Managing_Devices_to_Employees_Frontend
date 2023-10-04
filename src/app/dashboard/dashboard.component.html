@@ -8,6 +8,7 @@
               <th>Nome</th>
               <th>Cognome</th>
               <th>Email</th>
+              <th>Email3</th>
           </tr>
       </thead>
       <tbody>
@@ -17,12 +18,20 @@
               <td>{{utente.nome}}</td>
               <td>{{utente.cognome}}</td>
               <td>{{utente.email}}</td>
+              <div *ngFor="let utentes of utenti.dispositiviAssegnati">
+                <p>{{utentes.modelloDispositivo}}</p>
+                </div>
           </tr>
 
       </tbody>
   </table>
 </div>
 
+
+
+<div *ngFor="let utentes of utenti.dispositiviAssegnati">
+  <p>{{utentes.modelloDispositivo}}</p>
+  </div>
 
 
 <div class="container mt-4">
@@ -38,21 +47,13 @@
           </tr>
       </thead>
       <tbody>
-          <tr>
-              <td>1</td>
-              <td>esempio1</td>
-              <td>Mario</td>
-              <td>Rossi</td>
-              <td>mario@example.com</td>
-          </tr>
-          <tr>
-              <td>2</td>
-              <td>esempio2</td>
-              <td>Laura</td>
-              <td>Bianchi</td>
-              <td>laura@example.com</td>
-          </tr>
-          <!-- Aggiungi più righe per altri utenti -->
+        <tr *ngFor="let dispositivo of dispositivi">
+          <td>{{dispositivo.id}}</td>
+          <td>{{dispositivo.tipoDispositivo}}</td>
+          <td>{{dispositivo.disponibilitaDispositivo}}</td>
+          <td>{{dispositivo.utente}}</td>
+          <td>{{dispositivo.modelloDispositivo}}</td>
+      </tr>
       </tbody>
   </table>
 </div>
