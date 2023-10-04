@@ -1,0 +1,58 @@
+<div class="container mt-4">
+  <h1>Tabella Utenti</h1>
+  <table class="table table-bordered table-active table-responsive" >
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Nome</th>
+              <th>Cognome</th>
+              <th>Email</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let utente of utenti">
+              <td>{{utente.id}}</td>
+              <td>{{utente.username}}</td>
+              <td>{{utente.nome}}</td>
+              <td>{{utente.cognome}}</td>
+              <td>{{utente.email}}</td>
+          </tr>
+
+      </tbody>
+  </table>
+</div>
+
+
+
+<div class="container mt-4">
+  <h1>Tabella Dispositivi</h1>
+  <table class="table table-bordered table-active table-responsive">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Nome</th>
+              <th>Cognome</th>
+              <th>Email</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td>esempio1</td>
+              <td>Mario</td>
+              <td>Rossi</td>
+              <td>mario@example.com</td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td>esempio2</td>
+              <td>Laura</td>
+              <td>Bianchi</td>
+              <td>laura@example.com</td>
+          </tr>
+          <!-- Aggiungi più righe per altri utenti -->
+      </tbody>
+  </table>
+</div>
